@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-section">
+    <div class="row mx auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center">Product Name</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.name}}</h3>
+        </div>
+    </div>
+
+</div>
+<div class="content-section">
+    <div class="row mx auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center">quantity_in_stock</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.quantity_in_stock }}</h3>
+        </div>
+    </div>
+
+</div>
+<div class="content-section">
+    <div class="row mx auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center">quantity sold</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.quantity_in_sold }}</h3>
+        </div>
+    </div>
+
+</div>
+<div class="content-section">
+    <div class="row mx auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center">Per price {{ inventory.name }}</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.cost_per_item }}</h3>
+        </div>
+    </div>
+
+</div>
+<div class="content-section">
+    <div class="row mx auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center">sales or Revenue</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.sales}}</h3>
+        </div>
+    </div>
+
+</div>
+<div class="content-section">
+    <div class="row mx auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center">stock dates</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.stock_date}}</h3>
+        </div>
+    </div>
+
+</div>
+<div class="content-section">
+    <div class="row mx 4 auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="cart-title text-center"> last sales date</h5>
+                <span></span>
+            </div>
+            <h3 class="text-center">{{ inventory.last_sales_date}}</h3>
+        </div>
+        <div>
+    </div>
+
+</div> 
+<div class="content-section">
+    <div class="row mx 4 auto justify-content-center">
+        <div class="card m-4 " style="width: 18rem;">
+            <div class="card-body">
+                <a class="btn btn-danger btn-sm" href="{% url 'update_inventory' inventory.id %}">update</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'delete_inventory' inventory.id %}">delete</a>
+                <span></span>
+            </div>
+           
+        </div>
+        <div>
+    </div>
+
+</div> 
+{% endblock%}
